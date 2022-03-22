@@ -1,7 +1,11 @@
 package com.qa.quizedup.services;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
 import org.springframework.stereotype.Service;
 import com.qa.quizedup.model.QuizMaking;
 import com.qa.quizedup.repo.Repo;
@@ -75,6 +79,35 @@ public class ServiceDB {
 		
 	}
 	
+	//Method to be tested via the console rather than Postman as we only use 1 table in this project
+		public int takeTest(){
 
+			int totalScore = 0;
+			List<QuizMaking> testQuestions = repo.findAll();
+			
+			Scanner keyboard = new Scanner (System.in);
+
+			for (int i=0; i<testQuestions.size(); i++) {
+				System.out.println("Answer the following questions");
+				System.out.println(testQuestions.get(i));
+				String answer = keyboard.nextLine();
+				if (answer == testQuestions.get(i).getCorrectAnswer()) {
+				totalScore++;
+			}	
+		}
+		System.out.println("You got: " + " " + totalScore + " " + "out of" + testQuestions.size());
+		return repo.save(totalScore);
+
+		}
+		
+		//Shuffle all final exam questions to minimise cheating :)
+		public List<QuizMaking> shuffleFinalExam(){
+		
+			List<QuizMaking> listFinalExam = repo.findByFinalExam(true);
+			Collections.shuffle(listFinalExam, new Random());
+			return repo.saveAll(listFinalExam);
+			
+		
+	}
 
 }
