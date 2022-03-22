@@ -14,6 +14,7 @@ public interface Repo extends JpaRepository<QuizMaking, Long> {
 	public List<QuizMaking> findByFinalExam(boolean finalExam);
 	public int save(int totalScore);
 	public Object save(QuizMaking question1, QuizMaking question2);
+	public Object save(List<QuizMaking> testList);
 	
 	
 	

@@ -25,13 +25,21 @@ public class ServiceDB {
 		return true;
 	}
 	
-	public ArrayList<QuizMaking> createMultipleQuestions(QuizMaking[] questions){
-		ArrayList<QuizMaking>questionBucket = new ArrayList<>();
-		for (QuizMaking question: questions) {
+	public List<QuizMaking> createMultipleQuestions(List<QuizMaking> testList){
+		List<QuizMaking>questionBucket = new ArrayList<>();
+		for (QuizMaking question: testList) {
 			questionBucket.add(question);
 		}
-		return (ArrayList<QuizMaking>) repo.saveAll(questionBucket);
+		return (List<QuizMaking>) repo.saveAll(questionBucket);
 	}
+	
+//	public ArrayList<QuizMaking> createMultipleQuestions(QuizMaking[] questions){
+//		ArrayList<QuizMaking>questionBucket = new ArrayList<>();
+//		for (QuizMaking question: questions) {
+//			questionBucket.add(question);
+//		}
+//		return (ArrayList<QuizMaking>) repo.saveAll(questionBucket);
+//	}
 	
 	public QuizMaking getQuestionById(long id) {
 		return repo.findById(id).get();
