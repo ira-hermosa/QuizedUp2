@@ -56,6 +56,13 @@ public class Controller {
 		
 	}
 	
+	@GetMapping("/getFinalExam/{finalExam}")
+	public ResponseEntity<List<QuizMaking>>getFinalExam(@PathVariable("finalExam") boolean finalExam){
+		List<QuizMaking> response = service.getFinalExam(finalExam);
+		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
+		
+	}
+	
 	@GetMapping("/getQuestions")
 	public ResponseEntity<List<QuizMaking>>getAllQuestions(){
 		List<QuizMaking> response = service.getAllQuestions();
