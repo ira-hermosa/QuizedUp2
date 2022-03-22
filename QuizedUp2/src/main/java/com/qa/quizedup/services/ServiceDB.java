@@ -82,13 +82,13 @@ public class ServiceDB {
 	//Method to be tested via the console rather than Postman as we only use 1 table in this project
 		public int takeTest(){
 
-		
 			int totalScore = 0;
 			List<QuizMaking> testQuestions = repo.findAll();
 			
 			Scanner keyboard = new Scanner (System.in);
 
 			for (int i=0; i<testQuestions.size(); i++) {
+				System.out.println("Answer the following questions");
 				System.out.println(testQuestions.get(i));
 				String answer = keyboard.nextLine();
 				if (answer == testQuestions.get(i).getCorrectAnswer()) {
