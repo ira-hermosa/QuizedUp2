@@ -91,6 +91,20 @@ public class Controller {
 		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
 	}
 	
+	@GetMapping("/takeTest")
+	public ResponseEntity<String>takeTest(@PathVariable("answer") String answer){
+		service.takeTest();
+		String response = "You've completed the test";
+		return new ResponseEntity<>(response, HttpStatus.OK);
+		
+	}
 	
+	@GetMapping("/shuffleFinalExam")
+	public ResponseEntity<String>shuffleFinalExam(){
+		service.shuffleFinalExam();
+		String response = "Exam questions have been shuffled";
+		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
+		
+	}
 
 }
