@@ -92,7 +92,7 @@ public class Controller {
 	}
 	
 	@GetMapping("/takeTest")
-	public ResponseEntity<String>takeTest(@PathVariable("answer") String answer){
+	public ResponseEntity<String>takeTest(){
 		service.takeTest();
 		String response = "You've completed the test";
 		return new ResponseEntity<>(response, HttpStatus.OK);
