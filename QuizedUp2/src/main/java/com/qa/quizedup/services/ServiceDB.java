@@ -40,6 +40,13 @@ public class ServiceDB {
 		}return repo.findByCategory(category);
 	}
 	
+	public List<QuizMaking> getFinalExam(boolean finalExam){
+		for(QuizMaking question: repo.findAll()) {
+			if(question.isFinalExam() == finalExam) {
+			}
+		}return repo.findByFinalExam(finalExam);
+	}
+	
 	public List<QuizMaking> getAllQuestions(){
 		return repo.findAll();
 	}
