@@ -1,5 +1,6 @@
 package com.qa.quizedup.testing.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -138,6 +139,42 @@ public class ControllerTest {
 		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 		
 	
+	}
+	
+	@Test
+	public void testDeleteId() throws Exception{
+		RequestBuilder req = delete("/delete/1");
+		ResultMatcher checkStatus = status(). isAccepted();
+		ResultMatcher checkBody = content().string("Question of id:  1 has been deleted"); 
+		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
+	}
+	
+	@Test
+	public void testDeleteAll() throws Exception{
+		RequestBuilder req = delete("/deleteAll");
+		ResultMatcher checkStatus = status(). isAccepted(); //Is the status code of our request created(201)
+		ResultMatcher checkBody = content().string("All questions have been deleted"); 
+	}
+	
+	@Test
+	public void testTakeTest() throws Exception{
+		List<QuizMaking>testList = List.of(question1ID, question2ID, question3ID, question4ID);
+		String testQuestionIDJson = mapper.writeValueAsString(testList);
+		RequestBuilder req = get("/takeTest");
+		ResultMatcher checkStatus = status().isOk();
+		ResultMatcher checkBody = content().json(testQuestionIDJson);
+		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
+		
+	}
+	
+	@Test
+	public void testShuffleFinalExam() throws Exception{
+		List<QuizMaking>testList = List.of(question1ID, question3ID, question4ID);
+		String testQuestionIDJson = mapper.writeValueAsString(testList);
+		RequestBuilder req = get("/shuffleFinalExam");
+		ResultMatcher checkStatus = status().isAccepted();
+		ResultMatcher checkBody = content().json(testQuestionIDJson);
+		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
 
 }

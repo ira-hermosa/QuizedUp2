@@ -101,7 +101,7 @@ public class Controller {
 	@GetMapping("/takeTest")
 	public ResponseEntity<String>takeTest(){
 		service.takeTest();
-		String response = "You've completed the test";
+		String response = "You have completed the test";
 		return new ResponseEntity<>(response, HttpStatus.OK);
 		
 	}
