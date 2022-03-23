@@ -36,11 +36,18 @@ public class Controller {
 	}
 	
 	@PostMapping("/createMultipleQuestions")
-	public ResponseEntity<String> createMultipleQuestions(@RequestBody QuizMaking[] questions){
-		service.createMultipleQuestions(questions);
+	public ResponseEntity<String> createMultipleQuestions(@RequestBody List<QuizMaking> testList){
+		service.createMultipleQuestions(testList);
 		String response = "Questions have been created";
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
+	
+//	@PostMapping("/createMultipleQuestions")
+//	public ResponseEntity<String> createMultipleQuestions(@RequestBody QuizMaking[] questions){
+//		service.createMultipleQuestions(questions);
+//		String response = "Questions have been created";
+//		return new ResponseEntity<>(response, HttpStatus.OK);
+//	}
 	
 	@GetMapping("/getById/{id}")
 	public ResponseEntity<QuizMaking>getQuestionById(@PathVariable("id") long id){
