@@ -10,6 +10,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.qa.quizedup.model.QuizMaking;
 import com.qa.quizedup.repo.Repo;
@@ -17,6 +18,7 @@ import com.qa.quizedup.services.ServiceDB;
 
 
 @SpringBootTest
+@ActiveProfiles("dev")
 public class ServiceTest {
 	
 	@MockBean

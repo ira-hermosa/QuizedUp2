@@ -32,14 +32,14 @@ public class Controller {
 	public ResponseEntity<String> createQuestion(@RequestBody QuizMaking question){
 		service.createQuestion(question);
 		String response = "Question has been created";
-		return new ResponseEntity<>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
 	
 	@PostMapping("/createMultipleQuestions")
 	public ResponseEntity<String> createMultipleQuestions(@RequestBody List<QuizMaking> testList){
 		service.createMultipleQuestions(testList);
 		String response = "Questions have been created";
-		return new ResponseEntity<>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
 	
 //	@PostMapping("/createMultipleQuestions")

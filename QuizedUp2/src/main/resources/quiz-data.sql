@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `quiz_making`;
 
-CREATE TABLE holiday_booking( 
+CREATE TABLE quiz_making( 
 id long AUTO_INCREMENT, 
 category VARCHAR(30) NOT NULL,
 keywords VARCHAR(30) NOT NULL,
