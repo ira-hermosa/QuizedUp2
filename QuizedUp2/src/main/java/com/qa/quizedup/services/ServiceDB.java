@@ -104,7 +104,8 @@ public class ServiceDB {
 			}	
 		}
 		System.out.println("You got: " + " " + totalScore + " " + "out of" + testQuestions.size());
-		return repo.save(totalScore);
+		return totalScore;
+//		return repo.save(totalScore);
 
 		}
 		

@@ -58,7 +58,6 @@ public class ServiceTest {
 		
 		List<QuizMaking> testList = List.of(question1,question2);
 		Mockito.when(repo.findAll()).thenReturn(testList);
-		Mockito.when(repo.save(testList)).thenReturn(testList);
 		List<QuizMaking> result=service.createMultipleQuestions(testList);
 		Assertions.assertEquals(testList, result);
 		Mockito.verify(repo, Mockito.never()).flush();
@@ -146,10 +145,7 @@ public class ServiceTest {
 	@Test
 	public void testShuffleFinalExam() {
 		List<QuizMaking> testList = List.of(question1ID, question3ID, question4ID);
-		testList.add(question1ID);
-		testList.add(question3ID);
-		testList.add(question4ID);
-		Mockito.when(repo.save(testList)).thenReturn(testList);
+		Mockito.when(repo.findByFinalExam(true)).thenReturn(testList);
 		List result = service.shuffleFinalExam();
 		Assertions.assertEquals(testList, result);
 		Mockito.verify(repo, Mockito.never()).count();
