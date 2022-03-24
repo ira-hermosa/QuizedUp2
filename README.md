@@ -49,3 +49,10 @@ I expected the project to be quite challenging as I was still wrapping my head p
 
 The stretch goals need to be further debugged and refined. They are kept in as I will continue to work on them after project submission.
 
+# Author
+- Ira Hermosa (DFE Software Development Trainee)
+
+# Acknowledgments
+- QA trainers Earl Gray, Anoush Lowton, Reece Elder and Aswene Sivaraj
+- Various Stack Overflow contributors, Java/SpringBoot/JUnit5 tutorial video creators on YouTube
+
