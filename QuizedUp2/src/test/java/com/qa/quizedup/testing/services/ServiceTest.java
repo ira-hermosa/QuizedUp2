@@ -145,7 +145,7 @@ public class ServiceTest {
 //	
 	@Test
 	public void takeTest() {
-		List<QuizMaking> testList = List.of(question1, question2);
+		List<QuizMaking> testList = List.of(question1ID, question2ID);
 		Mockito.when(repo.findAll()).thenReturn(testList);
 		int result = service.takeTest();
 		Assertions.assertEquals(0, result);

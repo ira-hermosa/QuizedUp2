@@ -94,6 +94,7 @@ public class ServiceDB {
 				System.out.println("Initial list : " + " " + listFinalExam);
 				int i = 0; 
 				while (i<listFinalExam.size()) {
+					System.out.println("Shuffled list: ");
 					Collections.shuffle(listFinalExam, new Random());
 					i++;
 				}
@@ -102,6 +103,7 @@ public class ServiceDB {
 			
 		}
 			
+	
 	
 	//For each question in the list: Display question to user, save their answer
 	//If answer is correct, give 1 mark. Return total mark for all questions correctly attempted
@@ -120,6 +122,7 @@ public class ServiceDB {
 				}	
 			}
 			return repo.save(totalScore); 
+			
 		} 
 
 	
