@@ -24,9 +24,9 @@ The work for the following features have commenced and is included in the code b
 - API endpoints can be tested with Postman
 
 # Screenshots
-- Postman requests and outputs from the API
-- MySQL database showing that data has been persisted
-- Test results, including coverage report
+- Link to [Postman requests and outputs from the API] [https://github.com/ira-hermosa/QuizedUp2/tree/integrationtesting/QuizedUpScreenshots/Postman-requests-outputs]
+- Link to [MySQL database] [https://github.com/ira-hermosa/QuizedUp2/tree/integrationtesting/QuizedUpScreenshots/MySQL-database]
+- Link to [Test results, including coverage report] [https://github.com/ira-hermosa/QuizedUp2/tree/integrationtesting/QuizedUpScreenshots/Test-results-coverage]
 
 # Project management
 Jira has been used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP/boards/2/roadmap
