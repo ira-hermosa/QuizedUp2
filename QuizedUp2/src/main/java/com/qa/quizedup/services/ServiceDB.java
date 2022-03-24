@@ -113,9 +113,9 @@ public class ServiceDB {
 			for (int i=0; i<testQuestions.size(); i++) {
 				System.out.println(testQuestions.get(i));
 				String answer = keyboard.nextLine();
-//				if (answer == testQuestions.get(i).getCorrectAnswer())
 				if (Objects.equals(answer, testQuestions.get(i).getCorrectAnswer()));
-				{totalScore++;}	
+				{totalScore++;
+				}	
 			}
 			return repo.save(totalScore); 
 		} 

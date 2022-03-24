@@ -42,13 +42,6 @@ public class Controller {
 		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
 	
-//	@PostMapping("/createMultipleQuestions")
-//	public ResponseEntity<String> createMultipleQuestions(@RequestBody QuizMaking[] questions){
-//		service.createMultipleQuestions(questions);
-//		String response = "Questions have been created";
-//		return new ResponseEntity<>(response, HttpStatus.OK);
-//	}
-	
 	@GetMapping("/getById/{id}")
 	public ResponseEntity<QuizMaking>getQuestionById(@PathVariable("id") long id){
 		QuizMaking response = service.getQuestionById(id);

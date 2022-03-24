@@ -28,23 +28,17 @@ public class ServiceTest {
 	private ServiceDB service;
 	
 	//Test objects
-	QuizMaking question1 = new QuizMaking
-	("History", "War","How many years did the 100 years war last? (a) 111 years (b)116 years (c) 200 years (d) 100 years",
-	  "b",true);
+	QuizMaking question1 = new QuizMaking ("Science", "Gravity", "The concept of gravity was discovered by which famous physicist? (a) Graham Bell (b)Marie Curie (c) Isaac Newton (d) none is correct",
+	"b", false);
 	
-	QuizMaking question2 = new QuizMaking
-			("Language", "Germanic","Which of the following is a Germanic language? (a) Celtic  (b)Vietnamese (c) French (d) Malay",
-			  "c",false);
+	QuizMaking question2 = new QuizMaking ("History", "War", "How many years did the 100 years war last? (a) 111 years (b)116 years (c) 200 years (d) 100 years","b", true);
 	
 	//Test objects with ID
-		QuizMaking question1ID= new QuizMaking (1l,"Geography", "State","How many state are there in Australia? (a) 5 (b) 12 (c) 10 (d) 6",
-				  "d",true);
-		QuizMaking question2ID= new QuizMaking (2l,"Science", "Planet","What is the biggest planet in our solar system? (a) Jupiter (b) Saturn (c) Moon (d) Uranus",
-				  "a",false);
-		QuizMaking question3ID= new QuizMaking (3l,"Science", "Planet","What is the smallest planet in our solar system? (a) Jupiter (b) Saturn (c) Moon (d) Uranus",
-				  "b",true);
-		QuizMaking question4ID= new QuizMaking (4l,"Geography", "Continent","Which continent is Estonia located in? (a) Australia (b) Asia (c) Europe (d) Africa",
-				  "c",true);
+	QuizMaking question1ID= new QuizMaking (1l, "Science", "Gravity", "The concept of gravity was discovered by which famous physicist? (a) Graham Bell (b)Marie Curie (c) Isaac Newton (d) none is correct",
+	"b", false);
+	QuizMaking question2ID= new QuizMaking (2l, "History", "War", "How many years did the 100 years war last? (a) 111 years (b)116 years (c) 200 years (d) 100 years","b", true);
+	QuizMaking question3ID= new QuizMaking (3l, "Language", "Germanic", "Which of the following is a Germanic language? (a) Celtic  (b)Vietnamese (c) French (d) Malay","c", false);
+	QuizMaking question4ID= new QuizMaking (4l, "Geography", "State", "How many state are there in Australia? (a) 5 (b) 12 (c) 10 (d) 6","d", true);
 
 		
 	@Test
@@ -148,7 +142,7 @@ public class ServiceTest {
 	
 	
 	//******Stretch goals**********//
-	
+//	
 	@Test
 	public void takeTest() {
 		List<QuizMaking> testList = List.of(question1, question2);

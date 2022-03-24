@@ -40,23 +40,17 @@ public class ControllerTest {
 	private ObjectMapper mapper;
 	
 	//Test Objects
-	QuizMaking question1 = new QuizMaking
-	("History", "War","How many years did the 100 years war last? (a) 111 years (b)116 years (c) 200 years (d) 100 years",
-	"b",true);
-			
-	QuizMaking question2 = new QuizMaking
-	("Language", "Germanic","Which of the following is a Germanic language? (a) Celtic  (b)Vietnamese (c) French (d) Malay",
-	"c",false);
+	QuizMaking question1 = new QuizMaking ("Science", "Gravity", "The concept of gravity was discovered by which famous physicist? (a) Graham Bell (b)Marie Curie (c) Isaac Newton (d) none is correct",
+	"b", false);
+	QuizMaking question2 = new QuizMaking("History", "War", "How many years did the 100 years war last? (a) 111 years (b)116 years (c) 200 years (d) 100 years","b", true);
+	
 	
 	//Test Objects with ID
-	QuizMaking question1ID= new QuizMaking (1l,"Geography", "State","How many state are there in Australia? (a) 5 (b) 12 (c) 10 (d) 6",
-	"d",true);
-	QuizMaking question2ID= new QuizMaking (2l,"Science", "Planet","What is the biggest planet in our solar system? (a) Jupiter (b) Saturn (c) Moon (d) Uranus",
-	"a",false);
-	QuizMaking question3ID= new QuizMaking (3l,"Science", "Planet","What is the smallest planet in our solar system? (a) Jupiter (b) Saturn (c) Moon (d) Uranus",
-	"b",true);
-	QuizMaking question4ID= new QuizMaking (4l,"Geography", "Continent","Which continent is Estonia located in? (a) Australia (b) Asia (c) Europe (d) Africa",
-	"c",true);
+	QuizMaking question1ID= new QuizMaking (1l, "Science", "Gravity", "The concept of gravity was discovered by which famous physicist? (a) Graham Bell (b)Marie Curie (c) Isaac Newton (d) none is correct",
+	"b", false);
+	QuizMaking question2ID= new QuizMaking (2l, "History", "War", "How many years did the 100 years war last? (a) 111 years (b)116 years (c) 200 years (d) 100 years","b", true);
+	QuizMaking question3ID= new QuizMaking (3l, "Language", "Germanic", "Which of the following is a Germanic language? (a) Celtic  (b)Vietnamese (c) French (d) Malay","c", false);
+	QuizMaking question4ID= new QuizMaking (4l, "Geography", "State", "How many state are there in Australia? (a) 5 (b) 12 (c) 10 (d) 6","d", true);
 	
 	
 	@Test
@@ -81,7 +75,7 @@ public class ControllerTest {
 		
 		
 	}
-	//Failure -- Looks like it reads data from quiz-data.sql
+	
 	@Test
 	public void testGetById() throws Exception{
 		String QuestionIDJson = mapper.writeValueAsString(question1ID);
@@ -92,10 +86,10 @@ public class ControllerTest {
 		
 	}
 	
-	//Failure - Expected 2, but only got 1. Not sure why. The List has got 2 questions
+	
 	@Test
 	public void testGetByCategory() throws Exception{
-		List<QuizMaking>testList = List.of(question1ID, question2ID);
+		List<QuizMaking>testList = List.of(question1ID);
 		String testQuestionIDJson = mapper.writeValueAsString(testList);
 		RequestBuilder req = get("/getByCategory/Science");
 		ResultMatcher checkStatus = status().isAccepted();
@@ -103,10 +97,10 @@ public class ControllerTest {
 		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 		
 	}
-	//Failure - Expected 3, but only got 2. Not sure why, the list has got 3 questions
+	
 	@Test
 	public void testGetFinalExam() throws Exception{
-		List<QuizMaking>testList = List.of(question1ID, question3ID, question4ID);
+		List<QuizMaking>testList = List.of(question2ID, question4ID);
 		String testQuestionIDJson = mapper.writeValueAsString(testList);
 		RequestBuilder req = get("/getFinalExam/true");
 		ResultMatcher checkStatus = status().isAccepted();
@@ -115,7 +109,7 @@ public class ControllerTest {
 		
 	}
 	
-	//Failure - Couldn't find match for 
+	
 	@Test
 	public void testGetQuestions() throws Exception{
 		List<QuizMaking>testList = List.of(question1ID, question2ID, question3ID, question4ID);
@@ -169,6 +163,9 @@ public class ControllerTest {
 		ResultMatcher checkBody = content().string("Exam questions have been shuffled");
 		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
+
+	//Wrote the following test for the takeTest method, but still giving an error
+	//Will continue debugging this following project submission.
 	
 //	@Test
 //	public void testTakeTest() throws Exception{
@@ -176,9 +173,9 @@ public class ControllerTest {
 //		String testQuestionIDJson = mapper.writeValueAsString(testList);
 //		RequestBuilder req = get("/takeTest");
 //		ResultMatcher checkStatus = status().isOk();
-//		ResultMatcher checkBody = content().json(testQuestionIDJson);
+//		ResultMatcher checkBody = content().string("You have completed the test");
 //		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
-		
+//		
 //	}
 
 }
