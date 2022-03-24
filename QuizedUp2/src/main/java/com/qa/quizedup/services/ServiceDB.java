@@ -84,6 +84,8 @@ public class ServiceDB {
 	
 	//***** STRETCH GOALS******
 	
+	//These methods need further debugging.Keeping them in as I will continue investigating after project submission
+	
 	//Shuffle all questions with final exam property = true
 	//Return shuffled questions
 	//Use get request in Postman to print lists of questions and shuffled questions to console

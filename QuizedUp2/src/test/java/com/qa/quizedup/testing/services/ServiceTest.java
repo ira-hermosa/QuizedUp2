@@ -153,8 +153,9 @@ public class ServiceTest {
 		
 	}
 	
-	//Attempted to write the following test and resulted in an error saying java.lang.UnsupportedOperationException
+	//Wrote the following test but failed.
 	//Ran out of time to debug, but will continue debugging after project submission.
+	
 //	@Test
 //	public void testShuffleFinalExam() {
 //		List<QuizMaking> testList = List.of(question1ID, question3ID, question4ID);
@@ -164,7 +165,7 @@ public class ServiceTest {
 //		Mockito.verify(repo, Mockito.never()).count();
 //		
 //	}
-//	
+	
 	
 	
 
