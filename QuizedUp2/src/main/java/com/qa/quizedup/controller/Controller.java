@@ -32,22 +32,15 @@ public class Controller {
 	public ResponseEntity<String> createQuestion(@RequestBody QuizMaking question){
 		service.createQuestion(question);
 		String response = "Question has been created";
-		return new ResponseEntity<>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
 	
 	@PostMapping("/createMultipleQuestions")
 	public ResponseEntity<String> createMultipleQuestions(@RequestBody List<QuizMaking> testList){
 		service.createMultipleQuestions(testList);
 		String response = "Questions have been created";
-		return new ResponseEntity<>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
-	
-//	@PostMapping("/createMultipleQuestions")
-//	public ResponseEntity<String> createMultipleQuestions(@RequestBody QuizMaking[] questions){
-//		service.createMultipleQuestions(questions);
-//		String response = "Questions have been created";
-//		return new ResponseEntity<>(response, HttpStatus.OK);
-//	}
 	
 	@GetMapping("/getById/{id}")
 	public ResponseEntity<QuizMaking>getQuestionById(@PathVariable("id") long id){
@@ -73,7 +66,7 @@ public class Controller {
 	@GetMapping("/getQuestions")
 	public ResponseEntity<List<QuizMaking>>getAllQuestions(){
 		List<QuizMaking> response = service.getAllQuestions();
-		return new ResponseEntity<>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
 	}
 	
 	@PutMapping("/update/{id}")
@@ -98,10 +91,11 @@ public class Controller {
 		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
 	}
 	
+	//*****Stretch goals******//
 	@GetMapping("/takeTest")
 	public ResponseEntity<String>takeTest(){
 		service.takeTest();
-		String response = "You've completed the test";
+		String response = "You have completed the test";
 		return new ResponseEntity<>(response, HttpStatus.OK);
 		
 	}
