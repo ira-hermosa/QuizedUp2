@@ -11,7 +11,7 @@ At present, the app alows user to:
 - delete question by id
 - delete all questions
 
-I'm hoping to evolve the app over time. Once fully developed, I'm hoping the app can aid teachers in under-resourced countries to deliver online exams.
+The app will evolve over time. Once fully developed, it will be donated to teachers in under-resourced countries so that they can deliver online exams.
 
 # Future improvements - Short term
 The work for the following features have commenced and is included in the code base. These features will be fully functional in the next sprint:
@@ -29,6 +29,12 @@ The work for the following features have commenced and is included in the code b
 - Test results, including coverage report
 
 # Project management
-Jira is used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP/boards/2/roadmap
+Jira has been used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP/boards/2/roadmap
+
+# Reflection
+I expected the project to be quite challenging as I was strill wrapping my head particularly around SpringBoot, JUnit and Mockito testing. However, it turned out to be a rewarding exercise. Not only did I learn the core technologies, I also learnt additional skills such as debugging and sharpened my logic when refactoring code.
+
+Whilst I managed to push myself to include stretch goals, they need to be further refined. I think the Java code for the methods was correct, but there were still missing links to Spring resulting in errors.
+
 
 
