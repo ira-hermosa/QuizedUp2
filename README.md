@@ -1,8 +1,34 @@
 # QuizedUp
 
-QuizedUp is an application to create online quizzes. This app was developed as a final project for the DFE Software Development programme at QA. The app will evolve over time as enhanced features being added in.
+QuizedUp is an application to create online quizzes. This app was developed as a final project for the DFE Software Development programme at QA.
 
 At present, the app alows user to:
 - add a quiz question
-- 
+- add multiple questions
+- read all questions
+- read questions by their (1) IDs, (2) category, (3) final exam classification
+- update questions
+- delete question by id
+- delete all questions
+
+I'm hoping to evolve the app over time. Once fully developed, I'm hoping the app can aid teachers in under-resourced countries to deliver online exams.
+
+# Future improvements - Short term
+The work for the following features have commenced and is included in the code base. These features will be fully functional in the next sprint:
+- feature to allow users to take test and be scored for their attempts
+- feature to shuffle questions in the final exam pool
+
+# Technologies
+The application was built using Java, SpringBoot, Maven, MySQL and H2 instance and runs locally on port 8081
+Service and Controller methods have been tested using JUnit5 and Mockito. Overall testing coverage is currently at 92.2%
+API endpoints can be tested with Postman
+
+# Screenshots
+Postman requests and outputs from the API
+MySQL database showing that data has been persisted
+Test results, including coverage report
+
+# Project management
+Jira is used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP/boards/2/roadmap
+
 
