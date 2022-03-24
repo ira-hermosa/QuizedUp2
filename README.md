@@ -15,7 +15,7 @@ The app will evolve over time. Once fully developed, it will be donated to teach
 
 # Future improvements - Short term
 The work for the following features have commenced and is included in the code base. These features will be fully functional in the next sprint:
-- feature to allow users to take test and be scored for their attempts
+- feature to allow users to take test and get a score for their attempts
 - feature to shuffle questions in the final exam pool
 
 # Technologies
