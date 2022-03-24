@@ -29,7 +29,7 @@ The work for the following features have commenced and is included in the code b
 - Link to [Test results, including coverage report] [https://github.com/ira-hermosa/QuizedUp2/tree/integrationtesting/QuizedUpScreenshots/Test-results-coverage]
 
 # Project management
-Jira has been used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP/boards/2/roadmap
+Jira has been used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP2/boards/3/roadmap
 
 # Reflection
 I expected the project to be quite challenging as I was strill wrapping my head particularly around SpringBoot, JUnit and Mockito testing. However, it turned out to be a rewarding exercise. Not only did I learn the core technologies, I also learnt additional skills such as debugging and sharpened my logic when refactoring code.
