@@ -32,7 +32,7 @@ The work for the following features have commenced and is included in the code b
 Jira has been used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP2/boards/3/roadmap
 
 # Reflection
-I expected the project to be quite challenging as I was strill wrapping my head particularly around SpringBoot, JUnit and Mockito testing. However, it turned out to be a rewarding exercise. Not only did I learn the core technologies, I also learnt additional skills such as debugging and sharpened my logic when refactoring code.
+I expected the project to be quite challenging as I was still wrapping my head particularly around SpringBoot, JUnit and Mockito testing. However, it turned out to be a rewarding exercise. Not only did I learn the core technologies, I also learnt additional skills such as debugging and sharpened my logic when refactoring code.
 
 Whilst I managed to push myself to include stretch goals, they need to be further refined. I think the Java code for the methods was correct, but there were still missing links to Spring resulting in errors.
 
