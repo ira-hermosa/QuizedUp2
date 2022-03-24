@@ -73,7 +73,7 @@ public class Controller {
 	@GetMapping("/getQuestions")
 	public ResponseEntity<List<QuizMaking>>getAllQuestions(){
 		List<QuizMaking> response = service.getAllQuestions();
-		return new ResponseEntity<>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
 	}
 	
 	@PutMapping("/update/{id}")
@@ -98,6 +98,7 @@ public class Controller {
 		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
 	}
 	
+	//*****Stretch goals******//
 	@GetMapping("/takeTest")
 	public ResponseEntity<String>takeTest(){
 		service.takeTest();

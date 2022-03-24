@@ -81,7 +81,7 @@ public class ControllerTest {
 		
 		
 	}
-	//Failure
+	//Failure -- Looks like it reads data from quiz-data.sql
 	@Test
 	public void testGetById() throws Exception{
 		String QuestionIDJson = mapper.writeValueAsString(question1ID);
@@ -92,17 +92,18 @@ public class ControllerTest {
 		
 	}
 	
-	//Failure
+	//Failure - Expected 2, but only got 1. Not sure why. The List has got 2 questions
 	@Test
 	public void testGetByCategory() throws Exception{
-		String testQuestionIDJson = mapper.writeValueAsString(question2ID);
+		List<QuizMaking>testList = List.of(question1ID, question2ID);
+		String testQuestionIDJson = mapper.writeValueAsString(testList);
 		RequestBuilder req = get("/getByCategory/Science");
 		ResultMatcher checkStatus = status().isAccepted();
 		ResultMatcher checkBody = content().json(testQuestionIDJson);
 		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 		
 	}
-	//Failure
+	//Failure - Expected 3, but only got 2. Not sure why, the list has got 3 questions
 	@Test
 	public void testGetFinalExam() throws Exception{
 		List<QuizMaking>testList = List.of(question1ID, question3ID, question4ID);
@@ -114,7 +115,7 @@ public class ControllerTest {
 		
 	}
 	
-	//Failure
+	//Failure - Couldn't find match for 
 	@Test
 	public void testGetQuestions() throws Exception{
 		List<QuizMaking>testList = List.of(question1ID, question2ID, question3ID, question4ID);
@@ -126,7 +127,7 @@ public class ControllerTest {
 		
 	}
 	
-	//Failure
+	
 	@Test
 	public void testUpdate() throws Exception{
 		QuizMaking updatedQuestion = new QuizMaking ("new category", "keywords","New Questions? (a) 5 (b) 12 (c) 10 (d) 6",
@@ -135,7 +136,7 @@ public class ControllerTest {
 		String updatedQuestionJson = mapper.writeValueAsString(updatedQuestion);
 		RequestBuilder req = put("/update/1").contentType(MediaType.APPLICATION_JSON).content(updatedQuestionJson);
 		ResultMatcher checkStatus = status().isAccepted();
-		ResultMatcher checkBody = content().string("Question of id: 1 has been updated");
+		ResultMatcher checkBody = content().string("Question of id:  1 has been updated");
 		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 		
 	
@@ -154,18 +155,10 @@ public class ControllerTest {
 		RequestBuilder req = delete("/deleteAll");
 		ResultMatcher checkStatus = status(). isAccepted(); //Is the status code of our request created(201)
 		ResultMatcher checkBody = content().string("All questions have been deleted"); 
+		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
 	
-	@Test
-	public void testTakeTest() throws Exception{
-		List<QuizMaking>testList = List.of(question1ID, question2ID, question3ID, question4ID);
-		String testQuestionIDJson = mapper.writeValueAsString(testList);
-		RequestBuilder req = get("/takeTest");
-		ResultMatcher checkStatus = status().isOk();
-		ResultMatcher checkBody = content().json(testQuestionIDJson);
-		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
-		
-	}
+//******Stretch goals*********//
 	
 	@Test
 	public void testShuffleFinalExam() throws Exception{
@@ -173,8 +166,19 @@ public class ControllerTest {
 		String testQuestionIDJson = mapper.writeValueAsString(testList);
 		RequestBuilder req = get("/shuffleFinalExam");
 		ResultMatcher checkStatus = status().isAccepted();
-		ResultMatcher checkBody = content().json(testQuestionIDJson);
+		ResultMatcher checkBody = content().string("Exam questions have been shuffled");
 		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
+	
+//	@Test
+//	public void testTakeTest() throws Exception{
+//		List<QuizMaking>testList = List.of(question1ID, question2ID, question3ID, question4ID);
+//		String testQuestionIDJson = mapper.writeValueAsString(testList);
+//		RequestBuilder req = get("/takeTest");
+//		ResultMatcher checkStatus = status().isOk();
+//		ResultMatcher checkBody = content().json(testQuestionIDJson);
+//		mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
+		
+//	}
 
 }

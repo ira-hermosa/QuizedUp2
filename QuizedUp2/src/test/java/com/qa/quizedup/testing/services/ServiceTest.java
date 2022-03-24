@@ -147,7 +147,7 @@ public class ServiceTest {
 	}
 	
 	
-	//******Stretch goals**********
+	//******Stretch goals**********//
 	
 	@Test
 	public void takeTest() {
