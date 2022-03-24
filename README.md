@@ -19,14 +19,14 @@ The work for the following features have commenced and is included in the code b
 - feature to shuffle questions in the final exam pool
 
 # Technologies
-The application was built using Java, SpringBoot, Maven, MySQL and H2 instance and runs locally on port 8081
-Service and Controller methods have been tested using JUnit5 and Mockito. Overall testing coverage is currently at 92.2%
-API endpoints can be tested with Postman
+- The application was built using Java, SpringBoot, Maven, MySQL and H2 instance and runs locally on port 8081
+- Service and Controller methods have been tested using JUnit5 and Mockito. Overall testing coverage is currently at 92.2%
+- API endpoints can be tested with Postman
 
 # Screenshots
-Postman requests and outputs from the API
-MySQL database showing that data has been persisted
-Test results, including coverage report
+- Postman requests and outputs from the API
+- MySQL database showing that data has been persisted
+- Test results, including coverage report
 
 # Project management
 Jira is used to manage this project. Link to Jira Board: https://ira-bootcamp-projects.atlassian.net/jira/software/projects/QUIZEDUP/boards/2/roadmap
