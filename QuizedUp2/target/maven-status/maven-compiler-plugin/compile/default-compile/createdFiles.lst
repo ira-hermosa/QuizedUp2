@@ -1,0 +1,5 @@
+com\qa\quizedup\repo\Repo.class
+com\qa\quizedup\QuizedUpApplication.class
+com\qa\quizedup\controller\Controller.class
+com\qa\quizedup\model\QuizMaking.class
+com\qa\quizedup\services\ServiceDB.class
