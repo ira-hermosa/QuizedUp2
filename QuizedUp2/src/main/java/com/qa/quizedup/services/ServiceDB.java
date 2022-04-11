@@ -112,16 +112,16 @@ public class ServiceDB {
 		public int takeTest(){
 
 			int totalScore = 0;
-//			List<QuizMaking> testQuestions = repo.findAll();
-//			Scanner keyboard = new Scanner (System.in);
-//			System.out.println("Answer the following questions");
-//			for (int i=0; i<testQuestions.size(); i++) {
-//				System.out.println(testQuestions.get(i));
-//				String answer = keyboard.nextLine();
-//				if (Objects.equals(answer, testQuestions.get(i).getCorrectAnswer()));
-//				{totalScore++;
-//				}	
-//			}
+			List<QuizMaking> testQuestions = repo.findAll();
+			Scanner keyboard = new Scanner (System.in);
+			System.out.println("Answer the following questions");
+			for (int i=0; i<testQuestions.size(); i++) {
+				System.out.println(testQuestions.get(i));
+				String answer = keyboard.nextLine();
+				if (Objects.equals(answer, testQuestions.get(i).getCorrectAnswer()));
+				{totalScore++;
+				}	
+			}
 			return repo.save(totalScore); 
 			
 		} 
